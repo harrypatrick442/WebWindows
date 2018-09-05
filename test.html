@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script type='text/javascript' src='libs/cursors.js'></script>
+<script type='text/javascript' src='libs/atomic_boolean.js'></script>
+<script type='text/javascript' src='libs/drag.js'></script>
+<script type='text/javascript' src='libs/timer.js'></script>
+<script type='text/javascript' src='libs/task.js'></script>
+<script type='text/javascript' src='libs/equalValues.js'></script>
+<script type='text/javascript' src='libs/event_enabled_builder.js'></script>
+<script type='text/javascript' src='libs/foreach.js'></script>
+<script type='text/javascript' src='libs/generic_window.js'></script>
+<script type='text/javascript' src='libs/hover.js'></script>
+<script type='text/javascript' src='libs/is_mobile.js'></script>
+<script type='text/javascript' src='libs/iterator.js'></script>
+<script type='text/javascript' src='libs/make_unselectable.js'></script>
+<script type='text/javascript' src='libs/positioning.js'></script>
+<script type='text/javascript' src='libs/rect.js'></script>
+<script type='text/javascript' src='libs/resizer.js'></script>
+<script type='text/javascript' src='libs/settings.js'></script>
+<script type='text/javascript' src='libs/set_text.js'></script>
+<script type='text/javascript' src='libs/style_from_object.js'></script>
+<script type='text/javascript' src='libs/task.js'></script>
+<script type='text/javascript' src='libs/themes.js'></script>
+<script type='text/javascript' src='libs/timer.js'></script>
+<script type='text/javascript' src='libs/tooltip.js'></script>
+<script type='text/javascript' src='libs/efficient_moving_cycle.js'></script>
+<script type='text/javascript' src='libs/vertically_center.js'></script>
+<script type='text/javascript' src='libs/hash_source.js'></script>
+<script type='text/javascript' src='libs/hash_map.js'></script>
+<script type='text/javascript' src='libs/windows.js'></script>
+<script type='text/javascript' src='libs/taskbar.js'></script>
+<script type='text/javascript' src='root/_webwindows.js'></script>
+    <script type='text/javascript'>
+	for(var i=0; i<2; i++){
+    var genericWindow = new Windows.Generic({
+        name:'Test Window',
+        tooltipMessage:'Used to pick location',
+        iconPath:'images/icon.png',
+        minWidth:150,
+        maxWidth:1000,
+        minHeight:200,
+        maxHeight:1000,
+        defaultWidth:500,
+        defaultHeight:500,
+        defaultX:200,
+        defaultY:200,
+        minimized:false,
+        minimizable:true,
+        maximizable:true,
+        minimizeOnClose:false});
+    genericWindow.divMain.style.overflowY = 'auto';}
+	document.body.appendChild(TaskBar.element);
+    </script>
+</body>
+
+</html>
