@@ -1,0 +1,57 @@
+body{
+	
+	ooverflow-y:auto;
+}
+.web-windows{
+
+}
+.web-windows .window-generic{
+            position :fixed;
+            width :100%;
+            left :0px;
+            top :0px;
+            margin :0;
+}
+.web-windows	.window-generic .main{
+		
+		height:calc(100% - 20px);
+		width:100%;
+		bottom:0px;
+		float:left;
+		position:relative;
+}
+.web-windows .window-generic .main{
+background-color:#000000;
+}
+.web-windows .window-generic .inner{
+		position : absolute;
+		border : 1px solid #66a3ff;
+		background-color : #0099ff;
+		padding : 0px 3px 3px 3px;
+		border-radius : 5px;
+		overflow : hidden;
+}
+.web-windows .window-generic .tab{
+		float:left;
+		width : 100%;
+		height : 20px;
+		cursor : move;
+}
+.web-windows .window-generic .tab .name{
+		float:left;
+		padding-left:5px;
+		font-family:Arial;
+		text-overflow:ellipsisp;
+		overflow:hidden;
+}
+.web-windows .button{
+       float :right;
+       border :0px;
+       background-color :transparent;
+       cursor :pointer;
+       font-family :Arial;
+       font-weight :900;
+       font-size :14px;
+       height :12px;
+       margin-top :1px;
+}

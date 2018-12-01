@@ -157,58 +157,38 @@ var Windows = new (function () {
 		this.getMinimizable=function(){
 			return minimizable;
 		};
-		
-		
-		
-		
-		
-		//this.taskBarInformation = 
+	
 		var element = document.createElement('div');
-		this.element = element;
+		this.element = element
+		element.classList.add('window-generic');
 		var divInner = document.createElement('div');
 		this.divInner = divInner;
+		divInner.classList.add('inner');
 		var divTab = document.createElement('div');
 		this.divTab = divTab;
+		divTab.classList.add('tab');
 		var divMain = document.createElement('div');
 		this.divMain = divMain;
+		divMain.classList.add('main');
 		var divName = document.createElement('div');
+		divName.classList.add('name');
 		var buttonClose;
 		var buttonMinimize;
 		var buttonMaximize;
 		
 		element.style.position = "absolute";
 		
-		divInner.style.position = 'absolute';
-		divInner.style.border = '1px solid #66a3ff';
-		divInner.style.backgroundColor = '#0099ff';
-		divInner.style.padding = '0px 3px 3px 3px';
-		divInner.style.borderRadius = "5px";
-		divInner.style.overflow = 'hidden';
 		
-		divTab.style.float = 'left';
-		divTab.style.width = "100%";
-		divTab.style.height = "20px";
-		divTab.style.cursor = 'move';
-		
-		divName.style.float = 'left';
-		divName.style.paddingLeft = '5px';
-		divName.style.fontFamily = 'Arial';
-		divName.style.textOverflow='ellipsis';
-		divName.style.overflow='hidden';
 		verticallyCenter(divName);
 		setText(divName, name);
 		
-		divMain.style.height = 'calc(100% - 20px)';
-		divMain.style.width = '100%';
-		divMain.style.bottom = '0px';
-		divMain.style.float = 'left';
-		divMain.style.position = 'relative';
 		
 		element.appendChild(divInner);
 		divInner.appendChild(divTab);
 		divTab.appendChild(divName);
 		divInner.appendChild(divMain);
 		document.documentElement.appendChild(element);
+		document.documentElement.classList.add('web-windows');
 		SelectHelper.makeUnselectable(element);
 		
         document.body.appendChild(element);
@@ -545,7 +525,7 @@ var Windows = new (function () {
             instances[i].internal.screenResized();
         }
     }, false);
-    document.body.style.overflowY = 'auto';
+	
     this.divDragHeightTaskBarPx = document.documentElement.clientHeight / 12;
     function stopEventPropogation(e)
     {
@@ -611,12 +591,7 @@ var Windows = new (function () {
         }
         else
         {
-            div.style.position = 'fixed';
-            div.style.width = '100%';
             div.style.height = 'calc(100% - ' + String(self.divDragHeightTaskBarPx) + 'px)';
-            div.style.left = '0px';
-            div.style.top = '0px';
-            div.style.margin = '0';
             frameThemeObject = {name: 'frameMobile', elements: [divInner]};
             frameBorderThemeObject = {name: 'frameBorderMobile', elements: [divInner]};
         }
@@ -683,18 +658,11 @@ var Windows = new (function () {
     }
     function Button(callback, imageSource, imageSourceHover)
     {
+		EventEnabledBuilder(this); 
         var self = this;
         var element = document.createElement('button');
 		this.element = element;
-        element.style.float = 'right';
-        element.style.border = '0px';
-        element.style.backgroundColor = 'transparent';
-        element.style.cursor = 'pointer';
-        element.style.fontFamily = 'Arial';
-        element.style.fontWeight = '900';
-        element.style.fontSize = '14px';
-        element.style.height = '12px';
-        element.style.marginTop = '1px';
+		element.classList.add('button');
         var img = document.createElement('img');
         img.src = imageSource;
         element.appendChild(img);
